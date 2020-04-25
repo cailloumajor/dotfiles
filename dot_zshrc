@@ -1,0 +1,39 @@
+#-----------------------------------------------------------------------------
+# oh-my-zsh configuration
+#-----------------------------------------------------------------------------
+# Uncomment the following line to display red dots whilst waiting for completion.
+COMPLETION_WAITING_DOTS="true"
+
+#-----------------------------------------------------------------------------
+# antigen configuration
+#-----------------------------------------------------------------------------
+source $HOME/antigen/antigen.zsh
+
+antigen use oh-my-zsh
+
+antigen bundles <<EOBUNDLES
+    colored-man-pages
+    docker
+    docker-compose
+    docker-machine
+    vscode
+    zsh-users/zsh-autosuggestions
+    zsh-users/zsh-completions
+    zsh-users/zsh-syntax-highlighting
+EOBUNDLES
+
+antigen apply
+
+#-----------------------------------------------------------------------------
+# User configuration
+#-----------------------------------------------------------------------------
+export LESSOPEN="| /usr/share/source-highlight/src-hilite-lesspipe.sh %s"
+export LESS=' -R -M'
+
+eval "$(direnv hook zsh)"
+
+eval "$(starship init zsh)"
+
+fpath=(~/.zsh/completion $fpath)
+autoload -Uz compinit
+compinit
