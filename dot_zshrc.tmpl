@@ -33,3 +33,7 @@ export LESSOPEN="| /usr/share/source-highlight/src-hilite-lesspipe.sh %s"
 export LESS=' -R -M'
 
 eval "$(starship init zsh)"
+
+{{ if (contains "microsoft" .chezmoi.kernel.osrelease) }}
+cd ~
+{{ end }}
