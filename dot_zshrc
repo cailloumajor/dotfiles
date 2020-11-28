@@ -30,6 +30,4 @@ antigen apply
 export LESSOPEN="| /usr/share/source-highlight/src-hilite-lesspipe.sh %s"
 export LESS=' -R -M'
 
-eval "$(direnv hook zsh)"
-
 eval "$(starship init zsh)"
