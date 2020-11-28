@@ -1,0 +1,3 @@
+{{ if (contains "microsoft" .chezmoi.kernel.osrelease) }}
+.bashrc
+{{ end }}
