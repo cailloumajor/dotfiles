@@ -1,3 +1,4 @@
 {{ if (contains "microsoft" .chezmoi.kernel.osrelease) }}
 .bashrc
+.profile
 {{ end }}
