@@ -33,7 +33,3 @@ export LESS=' -R -M'
 eval "$(direnv hook zsh)"
 
 eval "$(starship init zsh)"
-
-fpath=(~/.zsh/completion $fpath)
-autoload -Uz compinit
-compinit
