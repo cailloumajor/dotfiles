@@ -16,7 +16,9 @@ antigen bundles <<EOBUNDLES
     docker
     docker-compose
     docker-machine
+    kubectl
     vscode
+    unixorn/autoupdate-antigen.zshplugin
     zsh-users/zsh-autosuggestions
     zsh-users/zsh-completions
     zsh-users/zsh-syntax-highlighting
