@@ -8,12 +8,11 @@ case $- in
       *) return;;
 esac
 
-case "$TERM" in
-xterm*)
+if [[ "$TERM" == xterm* ]] && [[ "$SHELL" == *bash ]]
+then
     export SHELL=/usr/bin/zsh
     exec $SHELL
-    ;;
-esac
+fi
 
 # don't put duplicate lines or lines starting with space in the history.
 # See bash(1) for more options
