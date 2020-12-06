@@ -1,0 +1,4 @@
+{{- if .vscode_remote -}}
+.bashrc
+{{- end -}}
+install.sh

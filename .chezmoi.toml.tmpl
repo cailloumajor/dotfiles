@@ -1,0 +1,8 @@
+{{- $codespaces := env "CODESPACES" | not | not -}}
+{{- $containers := env "REMOTE_CONTAINERS" | not | not -}}
+sourceDir = "{{ .chezmoi.sourceDir }}"
+
+[data]
+name = "Arnaud Rocher"
+email = "arnaud.roche3@gmail.com"
+vscode_remote = {{ or $codespaces $containers }}
