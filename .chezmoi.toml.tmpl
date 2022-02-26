@@ -1,8 +1,9 @@
-{{- $codespaces := env "CODESPACES" | not | not -}}
-{{- $containers := env "REMOTE_CONTAINERS" | not | not -}}
+{{- $isWsl := or (env "WSL_DISTRO_NAME") (env "IS_WSL") | not | not -}}
+{{- $isDevcontainer := or (env "REMOTE_CONTAINERS") (env "CODESPACES") (env "VSCODE_REMOTE_CONTAINERS_SESSION") | not | not -}}
 sourceDir = "{{ .chezmoi.sourceDir }}"
 
 [data]
 name = "Arnaud Rocher"
 email = "arnaud.roche3@gmail.com"
-vscode_remote = {{ or $codespaces $containers }}
+is_wsl = {{ $isWsl }}
+is_devcontainer = {{ $isDevcontainer }}
