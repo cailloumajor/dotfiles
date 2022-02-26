@@ -9,8 +9,7 @@ case $- in
       *) return;;
 esac
 
-if [[ "$TERM" == xterm* ]] && [[ "$SHELL" == *bash ]]
-then
+if [[ "$TERM" == xterm* ]] && [[ "$SHELL" == *bash ]]; then
     export SHELL=/usr/bin/zsh
     exec $SHELL
 fi
