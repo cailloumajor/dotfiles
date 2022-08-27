@@ -1,6 +1,12 @@
 [aws]
 symbol = "  "
 
+[buf]
+symbol = " "
+
+[c]
+symbol = " "
+
 [conda]
 symbol = " "
 
@@ -25,6 +31,9 @@ symbol = " "
 [golang]
 symbol = " "
 
+[haskell]
+symbol = " "
+
 [hg_branch]
 symbol = " "
 
@@ -43,26 +52,17 @@ symbol = " "
 [nix_shell]
 symbol = " "
 
+[nodejs]
+symbol = " "
+
 [package]
 symbol = " "
 
-[perl]
-symbol = " "
-
-[php]
-symbol = " "
-
 [python]
-symbol = " "
+symbol = " "
 
-[ruby]
-symbol = " "
+[spack]
+symbol = "🅢 "
 
 [rust]
 symbol = " "
-
-[scala]
-symbol = " "
-
-[swift]
-symbol = "ﯣ "
