@@ -31,7 +31,10 @@ antigen apply
 #-----------------------------------------------------------------------------
 # User configuration
 #-----------------------------------------------------------------------------
-export LESSOPEN="| /usr/share/source-highlight/src-hilite-lesspipe.sh %s"
+source_highlight=/usr/share/source-highlight/src-hilite-lesspipe.sh
+if [[ -x $source_highlight ]]; then
+    export LESSOPEN="| $source_highlight %s"
+fi
 export LESS=' -R -M'
 
 windows_terminal_keep_current_path() {
