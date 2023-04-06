@@ -1,4 +1,5 @@
-# shellcheck disable=all
+# shellcheck shell=bash
+# zsh is mostly compatible with bash
 #-----------------------------------------------------------------------------
 # oh-my-zsh configuration
 #-----------------------------------------------------------------------------
@@ -8,7 +9,7 @@
 #-----------------------------------------------------------------------------
 # antigen configuration
 #-----------------------------------------------------------------------------
-source $HOME/antigen/antigen.zsh
+source "$HOME/antigen/antigen.zsh"
 
 antigen use oh-my-zsh
 
@@ -34,8 +35,8 @@ export LESSOPEN="| /usr/share/source-highlight/src-hilite-lesspipe.sh %s"
 export LESS=' -R -M'
 
 windows_terminal_keep_current_path() {
-    if [[ -v WT_SESSION ]] then
-        printf "\e]9;9;%s\e\\" "$(wslpath -w $PWD)"
+    if [[ -v WT_SESSION ]]; then
+        printf "\e]9;9;%s\e\\" "$(wslpath -w "$PWD")"
     fi
 }
 precmd_functions+=(windows_terminal_keep_current_path)
