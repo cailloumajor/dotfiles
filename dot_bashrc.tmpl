@@ -15,7 +15,7 @@ case $- in
       *) return;;
 esac
 
-if [[ "$TERM" == @(xterm*|screen) ]]  && [[ "$SHELL" == *bash ]]; then
+if [[ "$TERM" == @(xterm*|screen*) ]]  && [[ "$SHELL" == *bash ]]; then
     export SHELL=/usr/bin/zsh
     exec $SHELL
 fi
