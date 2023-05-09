@@ -18,6 +18,7 @@ antigen bundles <<EOBUNDLES
     docker
     docker-compose
     docker-machine
+    gh
     kubectl
     vscode
     unixorn/autoupdate-antigen.zshplugin
