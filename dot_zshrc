@@ -32,6 +32,8 @@ antigen apply
 #-----------------------------------------------------------------------------
 # User configuration
 #-----------------------------------------------------------------------------
+source ~/.aliases
+
 source_highlight=/usr/share/source-highlight/src-hilite-lesspipe.sh
 if [[ -x $source_highlight ]]; then
     export LESSOPEN="| $source_highlight %s"
