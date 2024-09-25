@@ -40,11 +40,4 @@ if [[ -x $source_highlight ]]; then
 fi
 export LESS=' -R -M'
 
-windows_terminal_keep_current_path() {
-    if [[ -v WT_SESSION ]]; then
-        printf "\e]9;9;%s\e\\" "$(wslpath -w "$PWD")"
-    fi
-}
-precmd_functions+=(windows_terminal_keep_current_path)
-
 eval "$(starship init zsh)"
