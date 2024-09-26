@@ -1,9 +1,9 @@
-local wezterm = require 'wezterm'
+local wezterm = require "wezterm"
 local mux = wezterm.mux
 local config = wezterm.config_builder()
 
 -- Thanks to https://github.com/wez/wezterm/issues/3173#issuecomment-1722531883
-wezterm.on('window-config-reloaded', function(window, pane)
+wezterm.on("window-config-reloaded", function(window, pane)
     -- approximately identify this gui window, by using the associated mux id
     local id = tostring(window:window_id())
 
@@ -21,8 +21,8 @@ wezterm.on('window-config-reloaded', function(window, pane)
     end
 end)
 
-config.color_scheme = 'Monokai (dark) (terminal.sexy)'
+config.color_scheme = "Monokai (dark) (terminal.sexy)"
 
-config.font = wezterm.font 'Hack Nerd Font'
+config.font = wezterm.font "Hack Nerd Font"
 
 return config
