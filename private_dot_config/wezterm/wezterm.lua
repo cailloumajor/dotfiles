@@ -1,5 +1,5 @@
 local wezterm = require "wezterm"
-local mux = wezterm.mux
+
 local config = wezterm.config_builder()
 
 -- Thanks to https://github.com/wez/wezterm/issues/3173#issuecomment-1722531883
