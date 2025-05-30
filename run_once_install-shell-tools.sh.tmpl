@@ -1,5 +1,4 @@
 {{- if .is_devcontainer -}}
 #!/bin/sh
-git clone https://github.com/zsh-users/antigen.git "$HOME/antigen"
 curl -fsSL https://starship.rs/install.sh | sh -s -- --yes --bin-dir "$HOME/.local/bin"
 {{- end -}}
