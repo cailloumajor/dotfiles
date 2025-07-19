@@ -1,5 +1,2 @@
-{{- if .is_devcontainer -}}
-.bashrc
-{{- end -}}
 install.sh
 .oh-my-zsh/cache/completions/
