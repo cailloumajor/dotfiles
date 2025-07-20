@@ -1,0 +1,26 @@
+{{- /* Checks if running interactively, which is not the case for GitHub Codespaces */ -}}
+{{- $interactive := stdinIsATTY -}}
+
+{{- if $interactive -}}
+{{-   writeToStdout "💡 Tip: you can re-enter your name and email with `chezmoi init --data=false`.\n" -}}
+{{- end -}}
+
+{{- $abi := "musl" -}}
+{{- $arch := "unsupported" -}}
+{{- if eq .chezmoi.arch "amd64" -}}
+{{-   $arch = "x86_64" -}}
+{{- else if hasPrefix .chezmoi.arch "armv" -}}
+{{-   $arch = "arm" -}}
+{{-   $abi = "musleabihf" -}}
+{{- else if eq .chezmoi.arch "arm64" -}}
+{{-   $arch = "aarch64" -}}
+{{- end -}}
+
+sourceDir = {{ .chezmoi.sourceDir | quote }}
+
+[data]
+{{- if $interactive }}
+name = {{ promptString "name" | quote }}
+email = {{ promptString "email" | quote }}
+{{- end }}
+starshipTarget = {{printf "%s-unknown-linux-%s" $arch $abi | quote}}
