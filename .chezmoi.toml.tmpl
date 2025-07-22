@@ -23,4 +23,4 @@ sourceDir = {{ .chezmoi.sourceDir | quote }}
 name = {{ promptString "name" | quote }}
 email = {{ promptString "email" | quote }}
 {{- end }}
-starshipTarget = {{printf "%s-unknown-linux-%s" $arch $abi | quote}}
+rustTarget = {{printf "%s-unknown-linux-%s" $arch $abi | quote}}

@@ -2,21 +2,24 @@
 [user]
 	name = {{ .name | quote }}
 	email = {{ .email | quote }}
-[pager]
-	log = diff-highlight | less
-	show = diff-highlight | less
-	diff = diff-highlight | less
-[interactive]
-	diffFilter = diff-highlight
-[diff]
-	tool = default-difftool
-[difftool "default-difftool"]
-	cmd = code --wait --diff $LOCAL $REMOTE
+
 [core]
 	editor = code --wait
 	autocrlf = input
+	pager = delta
+
+[interactive]
+	diffFilter = delta --color-only
+
+[delta]
+	navigate = true  # Use n and N to move between diff sections
+
+[merge]
+	conflictStyle = zdiff3
+
 [pull]
 	rebase = false
+
 [init]
 	defaultBranch = main
 {{ end -}}
