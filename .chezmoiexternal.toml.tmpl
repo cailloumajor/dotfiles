@@ -38,3 +38,10 @@ url = {{ gitHubLatestReleaseAssetURL "dandavison/delta" (printf "delta-*-%s.tar.
 stripComponents = 1
 path = "delta"
 refreshPeriod = "168h"
+
+[".local/bin/bat"]
+type = "archive-file"
+url = {{ gitHubLatestReleaseAssetURL "sharkdp/bat" (printf "bat-*-%s.tar.gz" .rustTarget) | quote }}
+stripComponents = 1
+path = "bat"
+refreshPeriod = "168h"
