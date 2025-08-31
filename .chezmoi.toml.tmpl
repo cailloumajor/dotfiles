@@ -5,15 +5,11 @@
 {{-   writeToStdout "💡 Tip: you can re-enter your name and email with `chezmoi init --data=false`.\n" -}}
 {{- end -}}
 
-{{- $abi := "musl" -}}
-{{- $arch := "unsupported" -}}
+{{- $rustArch := "unsupported" -}}
 {{- if eq .chezmoi.arch "amd64" -}}
-{{-   $arch = "x86_64" -}}
-{{- else if hasPrefix .chezmoi.arch "armv" -}}
-{{-   $arch = "arm" -}}
-{{-   $abi = "musleabihf" -}}
+{{-   $rustArch = "x86_64" -}}
 {{- else if eq .chezmoi.arch "arm64" -}}
-{{-   $arch = "aarch64" -}}
+{{-   $rustArch = "aarch64" -}}
 {{- end -}}
 
 sourceDir = {{ .chezmoi.sourceDir | quote }}
@@ -23,4 +19,4 @@ sourceDir = {{ .chezmoi.sourceDir | quote }}
 name = {{ promptString "name" | quote }}
 email = {{ promptString "email" | quote }}
 {{- end }}
-rustTarget = {{printf "%s-unknown-linux-%s" $arch $abi | quote}}
+rustArch = {{$rustArch | quote}}

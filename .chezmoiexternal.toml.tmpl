@@ -28,20 +28,20 @@ refreshPeriod = "168h"
 
 [".local/bin/starship"]
 type = "archive-file"
-url = {{ gitHubLatestReleaseAssetURL "starship/starship" (printf "starship-%s.tar.gz" .rustTarget) | quote }}
+url = {{ gitHubLatestReleaseAssetURL "starship/starship" (printf "starship-%s-unknown-linux-*.tar.gz" .rustArch) | quote }}
 path = "starship"
 refreshPeriod = "168h"
 
 [".local/bin/delta"]
 type = "archive-file"
-url = {{ gitHubLatestReleaseAssetURL "dandavison/delta" (printf "delta-*-%s.tar.gz" .rustTarget) | quote }}
+url = {{ gitHubLatestReleaseAssetURL "dandavison/delta" (printf "delta-*-%s-unknown-linux-*.tar.gz" .rustArch) | quote }}
 stripComponents = 1
 path = "delta"
 refreshPeriod = "168h"
 
 [".local/bin/bat"]
 type = "archive-file"
-url = {{ gitHubLatestReleaseAssetURL "sharkdp/bat" (printf "bat-*-%s.tar.gz" .rustTarget) | quote }}
+url = {{ gitHubLatestReleaseAssetURL "sharkdp/bat" (printf "bat-*-%s-unknown-linux-*.tar.gz" .rustArch) | quote }}
 stripComponents = 1
 path = "bat"
 refreshPeriod = "168h"
