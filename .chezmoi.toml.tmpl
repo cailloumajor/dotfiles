@@ -16,7 +16,7 @@ sourceDir = {{ .chezmoi.sourceDir | quote }}
 
 [data]
 {{- if $interactive }}
-name = {{ promptString "name" | quote }}
-email = {{ promptString "email" | quote }}
+name = {{ promptStringOnce . "name" "Enter your name" | quote }}
+email = {{ promptStringOnce . "email" "Enter your e-mail address" | quote }}
 {{- end }}
 rustArch = {{$rustArch | quote}}
