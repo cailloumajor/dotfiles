@@ -52,3 +52,10 @@ url = {{ gitHubLatestReleaseAssetURL "sharkdp/fd" (printf "fd-*-%s-unknown-linux
 stripComponents = 1
 path = "fd"
 refreshPeriod = "168h"
+
+[".local/bin/rg"]
+type = "archive-file"
+url = {{ gitHubLatestReleaseAssetURL "BurntSushi/ripgrep" (printf "ripgrep-*-%s-unknown-linux-*.tar.gz" .rustArch) | quote }}
+stripComponents = 1
+path = "rg"
+refreshPeriod = "168h"
