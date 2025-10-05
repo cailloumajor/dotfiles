@@ -59,3 +59,10 @@ url = {{ gitHubLatestReleaseAssetURL "BurntSushi/ripgrep" (printf "ripgrep-*-%s-
 stripComponents = 1
 path = "rg"
 refreshPeriod = "168h"
+
+[".local/bin/uv"]
+type = "archive-file"
+url = {{ gitHubLatestReleaseAssetURL "astral-sh/uv" (printf "uv-%s-unknown-linux-*.tar.gz" .rustArch) | quote }}
+stripComponents = 1
+path = "uv"
+refreshPeriod = "168h"
