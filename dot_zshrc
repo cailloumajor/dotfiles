@@ -94,3 +94,5 @@ fi
 export LESS=' -R -M'
 
 eval "$(starship init zsh)"
+
+eval "$(uv generate-shell-completion zsh)"
