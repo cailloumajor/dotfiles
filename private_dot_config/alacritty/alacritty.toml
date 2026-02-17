@@ -1,0 +1,33 @@
+[window]
+padding.x = 10
+padding.y = 20
+startup_mode = "Maximized"
+
+[font]
+normal.family = "Hack Nerd Font"
+size = 12
+
+# https://app.unpkg.com/alacritty-themes@4.1.5/files/themes/Monokai.dark.yml
+# name: Monokai (dark)
+# author: Chris Kempson
+[colors]
+primary.background = "#272822"
+primary.foreground = "#f8f8f2"
+cursor.text = "#272822"
+cursor.cursor = "#f8f8f2"
+normal.black = "#272822"
+normal.red = "#f92672"
+normal.green = "#a6e22e"
+normal.yellow = "#f4bf75"
+normal.blue = "#66d9ef"
+normal.magenta = "#ae81ff"
+normal.cyan = "#a1efe4"
+normal.white = "#f8f8f2"
+bright.black = "#75715e"
+bright.red = "#f92672"
+bright.green = "#a6e22e"
+bright.yellow = "#f4bf75"
+bright.blue = "#66d9ef"
+bright.magenta = "#ae81ff"
+bright.cyan = "#a1efe4"
+bright.white = "#f9f8f5"
