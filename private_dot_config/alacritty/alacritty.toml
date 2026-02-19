@@ -7,6 +7,9 @@ startup_mode = "Maximized"
 normal.family = "Hack Nerd Font"
 size = 12
 
+[selection]
+save_to_clipboard = true
+
 # https://app.unpkg.com/alacritty-themes@4.1.5/files/themes/Monokai.dark.yml
 # name: Monokai (dark)
 # author: Chris Kempson
