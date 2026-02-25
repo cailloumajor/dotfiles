@@ -23,9 +23,18 @@ symbol = "🧊 "
 
 [typst]
 symbol = "t "
+
 [custom.screen]
 description = "Displays whether we are in a screen session"
 command = "echo screen"
 when = """test -n "$STY" """
 format = "in [$symbol($output )]($style)"
 style = "bold yellow"
+
+[custom.tmux]
+description = "Displays whether we are in a tmux session"
+command = 'tmux display-message -p "#S"'
+when = 'test -n "$TMUX"'
+#format = "in [$symbol($output )]($style)"
+style = "bold yellow"
+symbol = "▣ "
