@@ -81,8 +81,7 @@ plugins=(
     zsh-syntax-highlighting
 )
 
-fpath+=${ZSH_CUSTOM:-${ZSH}/custom}/plugins/zsh-completions/src
-autoload -U compinit && compinit
+fpath+="${ZSH_CUSTOM:-${ZSH}/custom}/plugins/zsh-completions/src"
 
 source "$ZSH/oh-my-zsh.sh"
 
