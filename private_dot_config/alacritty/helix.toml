@@ -1,0 +1,11 @@
+[window]
+startup_mode = "Maximized"
+
+[scrolling]
+history = 0
+
+[font]
+normal.family = "JetBrainsMono Nerd Font"
+
+[terminal]
+osc52 = "Disabled"

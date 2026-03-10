@@ -39,6 +39,17 @@ function _devbox_check_callback {
     fi
 }
 
+function _devbox_check_outdated {
+    async_start_worker devbox_check_outdated
+    async_register_callback devbox_check_outdated _devbox_check_callback
+    async_job devbox_check_outdated devbox global list --outdated
+}
+
+# Allow Helix to run in its own terminal emulator, thus using a different font.
+function hx {
+    alacritty --config-file ~/.config/alacritty/helix.toml --command hx "$@" & disown
+}
+
 if command -v devbox >/dev/null; then
     eval "$(devbox global shellenv --init-hook)"
 
@@ -71,9 +82,7 @@ if command -v devbox >/dev/null; then
     typeset -A ZSH_HIGHLIGHT_PATTERNS
     ZSH_HIGHLIGHT_PATTERNS+=('rm -rf *' 'fg=white,bold,bg=red')
 
-    async_start_worker devbox_check_outdated
-    async_register_callback devbox_check_outdated _devbox_check_callback
-    async_job devbox_check_outdated devbox global list --outdated
+    _devbox_check_outdated
 else
     echo "/!\ devbox (https://www.jetify.com/docs/devbox) is not installed,"
     echo "    please install it, run 'devbox global install', and restart the shell"
