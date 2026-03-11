@@ -34,7 +34,7 @@ function _devbox_check_callback {
     if [[ -n "${output}" ]]; then
         zle -I
         echo "📦 devbox packages updates available:"
-        echo "${result_file}"
+        echo "${output}"
         echo "  → Use 'devbox global update' to update"
     fi
 }
@@ -80,7 +80,7 @@ if command -v devbox >/dev/null; then
     source "${DEVBOX_PACKAGES_DIR}/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
     ZSH_HIGHLIGHT_HIGHLIGHTERS+=(brackets pattern)
     typeset -A ZSH_HIGHLIGHT_PATTERNS
-    ZSH_HIGHLIGHT_PATTERNS+=('rm -rf *' 'fg=white,bold,bg=red')
+    ZSH_HIGHLIGHT_PATTERNS+=(['rm -rf *']='fg=white,bold,bg=red')
 
     _devbox_check_outdated
 else
