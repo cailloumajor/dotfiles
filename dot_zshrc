@@ -1,6 +1,10 @@
 # shellcheck shell=bash
 # zsh is mostly compatible with bash
 
+if [[ -n "${ZSH_DEBUGRC}" ]]; then
+    zmodload zsh/zprof
+fi
+
 source "${HOME}/.zsh/async.zsh"
 async_init
 
@@ -72,4 +76,10 @@ if command -v devbox >/dev/null; then
 else
     echo "/!\ devbox (https://www.jetify.com/docs/devbox) is not installed,"
     echo "    please install it, run 'devbox global install', and restart the shell"
+fi
+
+alias profile_zshrc='time ZSH_DEBUGRC=1 zsh -i -c exit'
+
+if [[ -n "${ZSH_DEBUGRC}" ]]; then
+    zprof
 fi
