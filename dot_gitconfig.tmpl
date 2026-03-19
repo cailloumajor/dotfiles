@@ -3,6 +3,7 @@
 	name = {{ .name | quote }}
 	email = {{ .email | quote }}
 
+{{ end -}}
 [core]
 	editor = code --wait
 	autocrlf = input
@@ -28,4 +29,3 @@
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
 	required = true
-{{ end -}}

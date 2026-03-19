@@ -2,6 +2,7 @@
   "files.associations": {
     "*bashrc*": "shellscript",
     "*zshrc*": "shellscript",
-    "*gitconfig.tmpl": "ini"
+    "*gitconfig.tmpl": "ini",
+    "*.toml.tmpl": "toml"
   }
 }

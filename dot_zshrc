@@ -5,79 +5,40 @@ if [[ -n "${ZSH_DEBUGRC}" ]]; then
     zmodload zsh/zprof
 fi
 
-source "${HOME}/.zsh/async.zsh"
-async_init
+# --- Oh My Zsh ---
+export ZSH="$HOME/.oh-my-zsh"  # Path to Oh My Zsh installation.
+export ZSH_CACHE_DIR="$HOME/.cache/oh-my-zsh"  # Oh My Zsh cache directory.
 
-function _devbox_check_callback {
-    local return_code="$2"
-    local output="$3"
-    local stderr="$5"
+zstyle ':omz:update' mode disabled  # disable automatic updates
 
-    async_stop_worker devbox_check_outdated
+plugins=(
+    chezmoi
+    mise
+    rust
+    starship
+    uv
+    colored-man-pages
+    zsh-autosuggestions
+    zsh-syntax-highlighting
+)
 
-    if (( return_code != 0 )); then
-        zle -I
-        echo "Checking devbox outdated packages failed:"
-        echo "${stderr}"
-    fi
+source "$ZSH/oh-my-zsh.sh"
 
-    if [[ -n "${output}" ]]; then
-        zle -I
-        echo "📦 devbox packages updates available:"
-        echo "${output}"
-        echo "  → Use 'devbox global update' to update"
-    fi
-}
+ZSH_HIGHLIGHT_HIGHLIGHTERS+=(brackets pattern)
+typeset -A ZSH_HIGHLIGHT_PATTERNS
+ZSH_HIGHLIGHT_PATTERNS+=(['rm -rf *']='fg=white,bold,bg=red')
 
-function _devbox_check_outdated {
-    async_start_worker devbox_check_outdated
-    async_register_callback devbox_check_outdated _devbox_check_callback
-    async_job devbox_check_outdated devbox global list --outdated
-}
+# --- Check for tools updates ---
+source "$HOME/.zsh/check_tools_updates.zsh"
 
+# --- Custom functions ---
 # Allow Helix to run in its own terminal emulator, thus using a different font.
 function hx {
     alacritty --config-file ~/.config/alacritty/helix.toml --command hx "$@" & disown
 }
 
-if command -v devbox >/dev/null; then
-    eval "$(devbox global shellenv --init-hook)"
-
-    # zsh-completions
-    fpath+="${DEVBOX_PACKAGES_DIR}/share/zsh/site-functions"
-    autoload -U compinit && compinit
-
-    source "${DEVBOX_PACKAGES_DIR}/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh"
-
-    # Oh My Zsh
-    export ZSH="${DEVBOX_PACKAGES_DIR}/share/oh-my-zsh"
-    # shellcheck disable=SC2034
-    ZSH_THEME=""
-    # shellcheck disable=SC2034
-    plugins=(
-        colored-man-pages
-    )
-    source "$ZSH/oh-my-zsh.sh"
-
-    eval "$(devbox completion zsh)"
-
-    eval "$(starship init zsh)"
-
-    eval "$(direnv hook zsh)"
-
-    eval "$(uv generate-shell-completion zsh)"
-
-    source "${DEVBOX_PACKAGES_DIR}/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
-    ZSH_HIGHLIGHT_HIGHLIGHTERS+=(brackets pattern)
-    typeset -A ZSH_HIGHLIGHT_PATTERNS
-    ZSH_HIGHLIGHT_PATTERNS+=(['rm -rf *']='fg=white,bold,bg=red')
-
-    _devbox_check_outdated
-else
-    echo "/!\ devbox (https://www.jetify.com/docs/devbox) is not installed,"
-    echo "    please install it, run 'devbox global install', and restart the shell"
-fi
-
+# --- Aliases ---
+# Profile `.zshrc`
 alias profile_zshrc='time ZSH_DEBUGRC=1 zsh -i -c exit'
 
 if [[ -n "${ZSH_DEBUGRC}" ]]; then

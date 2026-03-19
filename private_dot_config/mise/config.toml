@@ -1,0 +1,10 @@
+[tools]
+starship = "latest"
+usage = "latest"
+uv = "latest"
+bat = "latest"
+delta = "latest"
+fd = "latest"
+ripgrep = "latest"
+helix = "latest"
+jq = "latest"

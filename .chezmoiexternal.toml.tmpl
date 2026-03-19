@@ -1,0 +1,34 @@
+{{- if and (not .ephemeral) (not .headless) (eq .chezmoi.os "linux") -}}
+[".local/share/fonts/truetype/NerdFonts/Hack"]
+type = "archive"
+url = {{ gitHubLatestReleaseAssetURL "ryanoasis/nerd-fonts" "Hack.tar.xz" | quote }}
+exact = true
+refreshPeriod = "168h"
+
+[".local/share/fonts/truetype/NerdFonts/JetBrainsMono"]
+type = "archive"
+url = {{ gitHubLatestReleaseAssetURL "ryanoasis/nerd-fonts" "JetBrainsMono.tar.xz" | quote }}
+exact = true
+refreshPeriod = "168h"
+
+{{ end -}}
+[".oh-my-zsh"]
+type = "archive"
+url = "https://github.com/ohmyzsh/ohmyzsh/archive/master.tar.gz"
+exact = true
+stripComponents = 1
+refreshPeriod = "168h"
+
+[".oh-my-zsh/custom/plugins/zsh-autosuggestions"]
+type = "archive"
+url = "https://github.com/zsh-users/zsh-autosuggestions/archive/master.tar.gz"
+exact = true
+stripComponents = 1
+refreshPeriod = "168h"
+
+[".oh-my-zsh/custom/plugins/zsh-syntax-highlighting"]
+type = "archive"
+url = "https://github.com/zsh-users/zsh-syntax-highlighting/archive/master.tar.gz"
+exact = true
+stripComponents = 1
+refreshPeriod = "168h"

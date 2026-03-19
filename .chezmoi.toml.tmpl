@@ -1,22 +1,24 @@
-{{- /* Checks if running interactively, which is not the case for GitHub Codespaces */ -}}
-{{- $interactive := stdinIsATTY -}}
+{{/* Boolean feature tags */}}
+{{- $ephemeral := false -}}{{/* true if this machine is ephemeral, e.g. a cloud or VM instance */}}
+{{- $headless := not stdinIsATTY -}}{{/* true if this machine does not have a screen and keyboard */}}
+{{- "" -}}
 
-{{- if $interactive -}}
-{{-   writeToStdout "💡 Tip: you can re-enter your name and email with `chezmoi init --data=false`.\n" -}}
+{{/* Detect GitHub codespaces, VSCode remote containers, Docker containers, Multipass VMs, and Vagrant boxes */}}
+{{- if or (env "CODESPACES") (env "REMOTE_CONTAINERS_IPC") (eq .chezmoi.username "root" "ubuntu" "vagrant" "vscode") -}}
+{{-   $ephemeral = true -}}
+{{-   $headless = true -}}
 {{- end -}}
 
-{{- $rustArch := "unsupported" -}}
-{{- if eq .chezmoi.arch "amd64" -}}
-{{-   $rustArch = "x86_64" -}}
-{{- else if eq .chezmoi.arch "arm64" -}}
-{{-   $rustArch = "aarch64" -}}
+{{- if not $headless -}}
+{{-   writeToStdout "💡 Tip: you can re-enter your name and email with `chezmoi init --data=false`.\n" -}}
 {{- end -}}
 
 sourceDir = {{ .chezmoi.sourceDir | quote }}
 
 [data]
-{{- if $interactive }}
+ephemeral = {{ $ephemeral }}
+headless = {{ $headless }}
+{{- if not $headless }}
 name = {{ promptStringOnce . "name" "Enter your name" | quote }}
 email = {{ promptStringOnce . "email" "Enter your e-mail address" | quote }}
 {{- end }}
-rustArch = {{$rustArch | quote}}
