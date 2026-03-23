@@ -1,12 +1,15 @@
 #:schema https://mise.jdx.dev/schema/mise.json
 
 [tools]
-starship = "latest"
-usage = "latest"
-uv = "latest"
 bat = "latest"
 delta = "latest"
 fd = "latest"
-ripgrep = "latest"
 helix = "latest"
+"github:hougesen/kdlfmt" = "latest"
 jq = "latest"
+ripgrep = "latest"
+starship = "latest"
+tombi = "latest"
+usage = "latest"
+uv = "latest"
+zellij = "latest"
