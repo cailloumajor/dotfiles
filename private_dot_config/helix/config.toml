@@ -1,5 +1,9 @@
 theme = "catppuccin_mocha"
 
+[editor]
+bufferline = "multiple"
+color-modes = true
+
 [editor.cursor-shape]
 insert = "bar"
 select = "underline"
