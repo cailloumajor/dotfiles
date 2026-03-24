@@ -31,12 +31,6 @@ ZSH_HIGHLIGHT_PATTERNS+=(['rm -rf *']='fg=white,bold,bg=red')
 # --- Check for tools updates ---
 source "$HOME/.zsh/check_tools_updates.zsh"
 
-# --- Custom functions ---
-# Allow Helix to run in its own terminal emulator, thus using a different font.
-function hx {
-    alacritty --config-file ~/.config/alacritty/helix.toml --command hx "$@" & disown
-}
-
 # --- Aliases ---
 # Profile `.zshrc`
 alias profile_zshrc='time ZSH_DEBUGRC=1 zsh -i -c exit'
