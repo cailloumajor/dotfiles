@@ -7,6 +7,7 @@ fi
 
 # --- Oh My Zsh ---
 export ZSH="$HOME/.oh-my-zsh"  # Path to Oh My Zsh installation.
+export ZSH_CUSTOM="$HOME/.oh-my-zsh-custom"  # Path to Oh My Zsh custom directory.
 export ZSH_CACHE_DIR="$HOME/.cache/oh-my-zsh"  # Oh My Zsh cache directory.
 
 zstyle ':omz:update' mode disabled  # disable automatic updates
@@ -17,6 +18,7 @@ plugins=(
     rust
     starship
     uv
+    zellij
     colored-man-pages
     zsh-autosuggestions
     zsh-syntax-highlighting
