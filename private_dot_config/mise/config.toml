@@ -1,18 +1,14 @@
 #:schema https://mise.jdx.dev/schema/mise.json
 
 [tools]
-"npm:bash-language-server" = "latest"
 bat = "latest"
 delta = "latest"
 fd = "latest"
 helix = "latest"
-"github:hougesen/kdlfmt" = "latest"
 jq = "latest"
-node = "lts"
 ripgrep = "latest"
 shellcheck = "latest"
 starship = "latest"
-tombi = "latest"
 usage = "latest"
 uv = "latest"
 zellij = "latest"
