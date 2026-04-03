@@ -12,3 +12,6 @@ starship = "latest"
 usage = "latest"
 uv = "latest"
 zellij = "latest"
+
+[settings]
+experimental = true
