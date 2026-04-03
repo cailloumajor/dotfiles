@@ -4,4 +4,4 @@ file-types = [{ glob = "dot_{bashrc,profile,zprofile,zshrc}" }]
 
 [[language]]
 name = "toml"
-auto-format = true
+file-types = ["toml", { glob = "*.toml.tmpl" }]
