@@ -32,3 +32,10 @@ url = "https://github.com/zsh-users/zsh-syntax-highlighting/archive/master.tar.g
 exact = true
 stripComponents = 1
 refreshPeriod = "168h"
+
+# Temporary way to get pkl-lsp, waiting for a native executable
+# https://github.com/apple/pkl-lsp/issues/60
+[".local/share/java/pkl-lsp.jar"]
+type = "file"
+url = {{ gitHubLatestReleaseAssetURL "apple/pkl-lsp" "pkl-lsp-*.jar" | quote }}
+refreshPeriod = "168h"

@@ -1,0 +1,3 @@
+#!/usr/bin/env sh
+
+exec java -jar "$HOME/.local/share/java/pkl-lsp.jar"
