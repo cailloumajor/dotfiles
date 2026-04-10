@@ -4,6 +4,7 @@
 bat = "latest"
 delta = "latest"
 fd = "latest"
+"github:lusingander/serie" = "latest"
 helix = "latest"
 jq = "latest"
 ripgrep = "latest"
