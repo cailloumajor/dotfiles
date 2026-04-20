@@ -1,4 +1,5 @@
 [tools]
+"cargo:kdl-lsp" = "latest"
 "github:hougesen/kdlfmt" = "latest"
 node = "lts"
 "npm:bash-language-server" = "latest"

@@ -1,6 +1,13 @@
+[language-server.kdl-lsp]
+command = "kdl-lsp"
+
 [[language]]
 name = "bash"
 file-types = [{ glob = "dot_{bashrc,profile,zprofile,zshrc}" }]
+
+[[language]]
+name = "kdl"
+language-servers = ["kdl-lsp"]
 
 [[language]]
 name = "toml"

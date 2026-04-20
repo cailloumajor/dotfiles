@@ -1,0 +1,27 @@
+layout {
+    default_tab_template {
+        pane size=1 borderless=true {
+            plugin location="tab-bar"
+        }
+        children
+        pane size=1 borderless=true {
+            plugin location="status-bar"
+        }
+    }
+    tab name="Editor" {
+        pane {
+            borderless true
+            command "hx"
+            args "."
+        }
+    }
+    tab name="GitUI" {
+        pane {
+            borderless true
+            command "gitui"
+        }
+    }
+    tab name="Terminal" {
+        pane borderless=true
+    }
+}
