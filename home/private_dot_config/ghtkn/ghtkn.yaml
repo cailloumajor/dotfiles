@@ -1,0 +1,5 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/suzuki-shunsuke/ghtkn-go-sdk/refs/heads/main/json-schema/ghtkn.json
+# ghtkn - https://github.com/suzuki-shunsuke/ghtkn
+apps:
+  - name: cailloumajor-ghtkn # The name to identify the app
+    client_id: Iv23lijaN6LMjuZdFCo8 # Your GitHub App Client ID
