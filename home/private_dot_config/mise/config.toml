@@ -1,6 +1,7 @@
 #:schema https://mise.jdx.dev/schema/mise.json
 
 [tools]
+"aqua:suzuki-shunsuke/ghtkn" = "latest"
 bat = "latest"
 delta = "latest"
 fd = "latest"
