@@ -11,14 +11,15 @@ layout {
     tab name="Editor" {
         pane {
             borderless true
-            command "hx"
-            args "."
+            command "mise"
+            args "exec" "--" "hx" "."
         }
     }
     tab name="GitUI" {
         pane {
             borderless true
-            command "gitui"
+            command "mise"
+            args "exec" "--" "gitui"
         }
     }
     tab name="Terminal" {
