@@ -2,6 +2,9 @@
 command = "docker-language-server"
 args = ["start", "--stdio"]
 
+[language-server.rust-analyzer]
+config.imports.granularity.group = "module"
+
 [[language]]
 name = "dockerfile"
 language-servers = ["docker-language-server"]
