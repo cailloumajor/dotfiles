@@ -2,6 +2,7 @@
 
 [tools]
 "aqua:suzuki-shunsuke/ghtkn" = "latest"
+aube = "latest"
 bat = "latest"
 delta = "latest"
 fd = "latest"
