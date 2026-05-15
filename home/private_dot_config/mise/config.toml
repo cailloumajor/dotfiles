@@ -1,7 +1,6 @@
 #:schema https://mise.jdx.dev/schema/mise.json
 
 [tools]
-"aqua:suzuki-shunsuke/ghtkn" = "latest"
 aube = "latest"
 bat = "latest"
 delta = "latest"
@@ -19,3 +18,6 @@ zellij = "latest"
 
 [settings]
 experimental = true
+
+[settings.github]
+oauth_client_id = "Iv23liYiP3f4sWC5csxy"
