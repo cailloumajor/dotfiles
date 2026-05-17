@@ -10,5 +10,9 @@ name = "dockerfile"
 language-servers = ["docker-language-server"]
 
 [[language]]
+name = "pkl"
+auto-format = true
+
+[[language]]
 name = "toml"
 auto-format = true
