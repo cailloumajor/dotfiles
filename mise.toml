@@ -3,4 +3,5 @@
 "github:hougesen/kdlfmt" = "latest"
 node = "lts"
 "npm:bash-language-server" = "latest"
+shellcheck = "latest"
 tombi = "latest"
