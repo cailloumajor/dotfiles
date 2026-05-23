@@ -8,7 +8,7 @@ function ide {
     hash=$(printf '%s' "$dir" | sha1sum | cut -c1-6)
     session="${base}-${hash}"
 
-    zellij --layout dev attach --create "$session"
+    zellij --layout dev attach --create "$session" --force-run-commands
 }
 
 # If the completion file doesn't exist yet, we need to autoload it and
