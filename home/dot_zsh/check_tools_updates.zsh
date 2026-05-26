@@ -48,8 +48,12 @@ function _mise_check_callback {
     zle -I
 
     case $return_code in
-        1|3) echo "mise is outdated, please run \`mise self-update\`" ;&
-        2|3) echo "some mise tools are outdated, please run \`mise upgrade\`" ;;
+        1) echo "mise is outdated, please run \`mise self-update\`" ;;
+        2) echo "some mise tools are outdated, please run \`mise upgrade\`" ;;
+        3)
+            echo "mise is outdated, please run \`mise self-update\`"
+            echo "some mise tools are outdated, please run \`mise upgrade\`"
+            ;;
         10)
             echo "mise invocation error:"
             echo "${stderr}"
