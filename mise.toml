@@ -3,5 +3,6 @@
 "github:hougesen/kdlfmt" = "latest"
 node = "lts"
 "npm:bash-language-server" = "latest"
+rust = "latest"
 shellcheck = "latest"
 tombi = "latest"
