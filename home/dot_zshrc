@@ -16,6 +16,7 @@ plugins=(
     chezmoi
     mise
     rust
+    ssh-tmux
     starship
     uv
     zellij
