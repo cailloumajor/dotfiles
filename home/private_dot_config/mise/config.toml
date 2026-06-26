@@ -17,6 +17,7 @@ zellij = "latest"
 
 [settings]
 experimental = true
+minimum_release_age = "7d"
 
 [settings.github]
 oauth_client_id = "Iv23liYiP3f4sWC5csxy"
