@@ -8,23 +8,22 @@ layout {
             plugin location="status-bar"
         }
     }
+
     tab name="Editor" {
         pane {
             borderless true
-            command "mise"
-            args "exec" "--" "hx" "."
+            command "zellij-editor"
         }
     }
-    tab name="GitUI" {
+
+    tab name="Git" {
         pane {
             borderless true
-            command "mise"
-            args "exec" "--" "gitui"
+            command "zellij-gitui"
         }
     }
+
     tab name="Terminal" {
         pane borderless=true
     }
 }
-
-session_serialization false
