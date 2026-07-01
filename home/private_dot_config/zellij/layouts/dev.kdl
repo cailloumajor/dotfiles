@@ -27,3 +27,5 @@ layout {
         pane borderless=true
     }
 }
+
+session_serialization false
