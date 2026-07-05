@@ -1,7 +1,6 @@
 #:schema https://mise.jdx.dev/schema/mise.json
 
 [tools]
-aube = "latest"
 bat = "latest"
 delta = "latest"
 fd = "latest"
@@ -9,10 +8,7 @@ gitui = "latest"
 helix = "latest"
 jq = "latest"
 ripgrep = "latest"
-shellcheck = "latest"
 starship = "latest"
-usage = "latest"
-uv = "latest"
 zellij = "latest"
 
 [settings]
