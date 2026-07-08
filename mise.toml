@@ -1,7 +1,8 @@
 [tools]
+aube = "latest"
 "cargo:kdl-lsp" = "latest"
 "github:hougesen/kdlfmt" = "latest"
-node = "lts"
+node = "latest"
 "npm:bash-language-server" = "latest"
 rust = "latest"
 shellcheck = "latest"
