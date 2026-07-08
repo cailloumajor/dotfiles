@@ -2,6 +2,7 @@ theme = "catppuccin_mocha"
 
 [editor]
 bufferline = "multiple"
+clipboard-provider = "termcode"
 color-modes = true
 
 [editor.cursor-shape]
