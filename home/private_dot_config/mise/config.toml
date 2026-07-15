@@ -9,6 +9,7 @@ helix = "latest"
 jq = "latest"
 ripgrep = "latest"
 starship = "latest"
+usage = "latest"
 zellij = "latest"
 
 [settings]
