@@ -1,0 +1,12 @@
+amends "pkl:settings"
+
+local rawNoProxy = read?("env:NO_PROXY") ?? ""
+
+local noProxyList = rawNoProxy.split(Regex(#"[,\s]"#)).filter((host) -> !host.isEmpty).toListing()
+
+http {
+  proxy {
+    address = read?("env:HTTP_PROXY")
+    noProxy = noProxyList
+  }
+}
