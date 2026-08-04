@@ -1,7 +1,7 @@
 {{- if and (not .ephemeral) (not .headless) (eq .chezmoi.os "linux") -}}
 [".local/share/fonts/truetype/NerdFonts/Hack"]
 type = "archive"
-url = {{ gitHubLatestReleaseAssetURL "ryanoasis/nerd-fonts" "Hack.tar.xz" | quote }}
+url = {{ gitHubLatestReleaseAssetURL "ryanoasis/nerd-fonts" "Hack.tar.xz" | toToml }}
 exact = true
 refreshPeriod = "168h"
 
@@ -31,5 +31,5 @@ refreshPeriod = "168h"
 # https://github.com/apple/pkl-lsp/issues/60
 [".local/share/java/pkl-lsp.jar"]
 type = "file"
-url = {{ gitHubLatestReleaseAssetURL "apple/pkl-lsp" "pkl-lsp-*.jar" | quote }}
+url = {{ gitHubLatestReleaseAssetURL "apple/pkl-lsp" "pkl-lsp-*.jar" | toToml }}
 refreshPeriod = "168h"

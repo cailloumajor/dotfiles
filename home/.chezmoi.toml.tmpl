@@ -13,12 +13,12 @@
 {{-   writeToStdout "💡 Tip: you can re-enter your name and email with `chezmoi init --data=false`.\n" -}}
 {{- end -}}
 
-sourceDir = {{ .chezmoi.sourceDir | quote }}
+sourceDir = {{ .chezmoi.sourceDir | toToml }}
 
 [data]
 ephemeral = {{ $ephemeral }}
 headless = {{ $headless }}
 {{- if not $headless }}
-name = {{ promptStringOnce . "name" "Enter your name" | quote }}
-email = {{ promptStringOnce . "email" "Enter your e-mail address" | quote }}
+name = {{ promptStringOnce . "name" "Enter your name" | toToml }}
+email = {{ promptStringOnce . "email" "Enter your e-mail address" | toToml }}
 {{- end }}
