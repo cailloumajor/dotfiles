@@ -17,6 +17,7 @@ render = true
 
 [keys.normal]
 C-z = "no_op"
+x = "no_op"
 
 [keys.select]
 C-z = "no_op"
