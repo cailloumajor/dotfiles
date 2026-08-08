@@ -2,12 +2,14 @@
 
 [tools]
 bat = "latest"
+cargo-binstall = "latest"
 delta = "latest"
 fd = "latest"
 gitui = "latest"
 helix = "latest"
 jq = "latest"
 ripgrep = "latest"
+rust = "latest"
 starship = "latest"
 usage = "latest"
 zellij = "latest"
