@@ -1,0 +1,22 @@
+<clickhouse>
+    <query_log>
+        <database>system</database>
+        <table>query_log</table>
+    </query_log>
+    <query_thread_log>
+        <database>system</database>
+        <table>query_thread_log</table>
+    </query_thread_log>
+    <query_views_log>
+        <database>system</database>
+        <table>query_views_log</table>
+    </query_views_log>
+    <metric_log>
+        <database>system</database>
+        <table>metric_log</table>
+    </metric_log>
+    <asynchronous_metric_log>
+        <database>system</database>
+        <table>asynchronous_metric_log</table>
+    </asynchronous_metric_log>
+</clickhouse>
