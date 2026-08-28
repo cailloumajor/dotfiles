@@ -1,32 +1,23 @@
 layout {
     default_tab_template {
-        pane size=1 borderless=true {
+        pane size=1 {
             plugin location="tab-bar"
         }
         children
-        pane size=1 borderless=true {
+        pane size=1 {
             plugin location="status-bar"
         }
     }
 
     tab name="Editor" {
-        pane {
-            borderless true
-            command "zellij-editor"
-        }
+        pane command="zellij-editor"
     }
 
     tab name="Git" {
-        pane {
-            borderless true
-            command "zellij-gitui"
-        }
+        pane command="zellij-gitui"
     }
 
-    tab name="Terminal" {
-        pane borderless=true
-    }
+    tab name="Terminal"
 }
 
-pane_frames false
 session_serialization false
