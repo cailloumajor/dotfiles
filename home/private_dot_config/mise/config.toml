@@ -13,6 +13,7 @@ ripgrep = "latest"
 rust = "latest"
 starship = "latest"
 usage = "latest"
+uv = "latest"
 zellij = "latest"
 
 [settings]
