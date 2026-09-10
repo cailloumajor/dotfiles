@@ -1,5 +1,4 @@
 [tools]
-aube = "latest"
 "cargo:kdl-lsp" = "latest"
 "github:hougesen/kdlfmt" = "latest"
 node = "latest"

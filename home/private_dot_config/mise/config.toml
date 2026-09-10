@@ -1,6 +1,7 @@
 #:schema https://mise.jdx.dev/schema/mise.json
 
 [tools]
+aube = "latest"
 bat = "latest"
 cargo-binstall = "latest"
 delta = "latest"
@@ -15,6 +16,9 @@ starship = "latest"
 usage = "latest"
 uv = "latest"
 zellij = "latest"
+
+[settings]
+locked_scopes = ["project"]
 
 [settings.github]
 oauth_client_id = "Iv23liYiP3f4sWC5csxy"
