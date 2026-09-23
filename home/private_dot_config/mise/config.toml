@@ -19,6 +19,8 @@ zellij = "latest"
 
 [settings]
 locked_scopes = ["project"]
+auto_update = true
+auto_update_check_duration = "1d"
 
 [settings.github]
 oauth_client_id = "Iv23liYiP3f4sWC5csxy"

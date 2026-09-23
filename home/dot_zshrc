@@ -31,9 +31,6 @@ ZSH_HIGHLIGHT_HIGHLIGHTERS+=(brackets pattern)
 typeset -A ZSH_HIGHLIGHT_PATTERNS
 ZSH_HIGHLIGHT_PATTERNS+=(['rm -rf *']='fg=white,bold,bg=red')
 
-# --- Check for tools updates ---
-source "$HOME/.zsh/check_tools_updates.zsh"
-
 # --- Aliases ---
 # Profile `.zshrc`
 alias profile_zshrc='time ZSH_DEBUGRC=1 zsh -i -c exit'
