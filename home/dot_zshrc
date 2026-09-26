@@ -15,7 +15,6 @@ zstyle ':omz:update' mode disabled  # disable automatic updates
 plugins=(
     chezmoi
     mise
-    rust
     ssh-tmux
     starship
     uv
