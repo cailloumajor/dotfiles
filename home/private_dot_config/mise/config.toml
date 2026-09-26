@@ -1,7 +1,6 @@
 #:schema https://mise.jdx.dev/schema/mise.json
 
 [tools]
-aube = "latest"
 bat = "latest"
 cargo-binstall = "latest"
 delta = "latest"
