@@ -1,0 +1,8 @@
+[Unit]
+Description=Back up %i with rclone every minute
+
+[Timer]
+OnCalendar=minutely
+
+[Install]
+WantedBy=timers.target

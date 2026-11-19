@@ -1,0 +1,14 @@
+[Unit]
+Description=Back up %i with rclone
+# One configuration file per instance, holding SOURCE and DESTINATION.
+ConditionPathExists=%h/.config/rclone-sync/%i.env
+
+[Service]
+Type=oneshot
+EnvironmentFile=%h/.config/rclone-sync/%i.env
+# Only warnings and errors in the journal, not one entry per minute.
+LogLevelMax=notice
+ExecStart=%h/.local/bin/rclone-sync-dir "${SOURCE}" "${DESTINATION}"
+# The script calls rclone and git by name: the mise shims must be in the PATH.
+Environment=PATH=%h/.local/share/mise/shims:/usr/local/bin:/usr/bin:/bin
+

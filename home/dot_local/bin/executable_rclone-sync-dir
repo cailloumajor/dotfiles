@@ -1,0 +1,20 @@
+#!/bin/sh
+# Mirror a directory with rclone. In a Git working tree, only the files Git
+# does not ignore are copied (all .gitignore rules applied by Git itself).
+set -eu
+
+src="$1"
+dst="$2"
+
+if git -C "$src" rev-parse --is-inside-work-tree >/dev/null 2>&1; then
+    list="$(mktemp)"
+    trap 'rm -f "$list"' EXIT
+    {
+        git -C "$src" ls-files -z --cached --others --exclude-standard | tr '\0' '\n'
+        # History: the .git directory, which Git never lists itself.
+        (cd "$src" && find .git -type f)
+    } >"$list"
+    rclone sync -q --files-from-raw "$list" --delete-excluded "$src" "$dst"
+else
+    rclone sync -q "$src" "$dst"
+fi
