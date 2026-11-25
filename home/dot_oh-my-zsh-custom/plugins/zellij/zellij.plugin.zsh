@@ -20,4 +20,8 @@ if [[ ! -f "$ZSH_CACHE_DIR/completions/_zellij" ]]; then
 fi
 
 # Generate and load zellij completion
-zellij setup --generate-completion zsh >| "$ZSH_CACHE_DIR/completions/_zellij" &|
+zmodload -F zsh/files b:zf_mv
+() {
+    local TMPPREFIX="$ZSH_CACHE_DIR/completions/_zellij"
+    zf_mv -f -- =( zellij setup --generate-completion zsh ) "$TMPPREFIX"
+} &|
