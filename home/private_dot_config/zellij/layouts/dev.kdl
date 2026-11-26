@@ -17,7 +17,9 @@ layout {
         pane command="zellij-gitui"
     }
 
-    tab name="Terminal"
+    tab name="Terminal #1"
+
+    tab name="Terminal #2"
 }
 
 session_serialization false
